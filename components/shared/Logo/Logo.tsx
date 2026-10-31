@@ -19,7 +19,7 @@ export default function Logo() {
           className=" w-full h-full object-contain"
         /> */}
         
-       <div className="flex gap-1 flex-col items-start justify-center">
+       <div className="flex gap-1 flex-col items-start justify-center -mt-2">
          <span className="text-primary text-3xl font-bold">AutoBatt</span>
         <span className="text-xs">Car Repair Mobile Mechanic Dubai</span>
        </div>
