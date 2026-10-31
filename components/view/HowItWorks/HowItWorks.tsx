@@ -84,7 +84,7 @@ export default function HowItWorks() {
                 <div className="absolute -right-32 top-1/3 h-[400px] w-[400px] rounded-full bg-primary/[0.04] blur-[120px]" />
             </div>
 
-            <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+            <div className="relative px-5">
 
                 {/* ============================================================
                     SECTION HEADER — Centered, massive, editorial

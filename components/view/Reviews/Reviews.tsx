@@ -34,7 +34,7 @@ export default function Reviews({
   const rest = reviews.filter((_, i) => i !== featuredIndex);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#faf9f7] py-10">
+    <section className="relative overflow-hidden bg-[#faf9f7] py-10">
       {/* ============================================================
           BACKGROUND DECOR
       ============================================================ */}
@@ -54,7 +54,7 @@ export default function Reviews({
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+      <div className="relative">
         {/* ============================================================
             HEADER
         ============================================================ */}

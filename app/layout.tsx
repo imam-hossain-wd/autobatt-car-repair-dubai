@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Noto_Serif } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils";
+import Footer from "@/components/shared/Footer/Footer";
 
 const notoSerif = Noto_Serif({subsets:['latin'],variable:'--font-serif'});
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         {/* <ThemeProvider></ThemeProvider> */}
         <main>
         {children}
+        <Footer />
         </main>
       </body>
     </html>

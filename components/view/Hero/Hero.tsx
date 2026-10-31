@@ -93,7 +93,7 @@ export default function Hero() {
             {/* ============================================================
                 MAIN CONTENT
             ============================================================ */}
-            <div className="relative mx-auto max-w-7xl px-5 py-8 lg:py-14">
+            <div className="relative px-5 py-8 lg:py-14">
                 <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-6">
 
                     {/* =====================================================
@@ -222,13 +222,13 @@ export default function Hero() {
                             </div>
 
                             {/* Main image card */}
-                            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border/80 bg-muted shadow-2xl shadow-primary/10">
+                            <div className="relative aspect-[4/4] w-full overflow-hidden border border-border/80 bg-muted shadow-2xl shadow-primary/10">
                                 <Image
                                     src={heroBanner?.hero}
                                     alt="Certified mobile car mechanic repairing a vehicle on-site in Dubai"
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 40vw"
-                                    className="object-cover"
+                                    className="object-cover rounded-2xl"
                                     priority
                                 />
 

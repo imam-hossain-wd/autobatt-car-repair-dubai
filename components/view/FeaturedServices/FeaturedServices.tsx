@@ -66,7 +66,7 @@ export function FeaturedServices({
     const regularServices = displayServices.slice(0);
 
     return (
-        <section className="relative w-full overflow-hidden bg-background py-10 px-14">
+        <section className="relative w-full overflow-hidden bg-background py-10 px-5">
             {/* ============================================================
                 BACKGROUND — Layered atmosphere
             ============================================================ */}
