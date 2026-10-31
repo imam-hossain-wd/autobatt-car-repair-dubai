@@ -3,6 +3,7 @@ import { FeaturedServices } from "@/components/view/FeaturedServices/FeaturedSer
 import Hero from "@/components/view/Hero/Hero";
 import HowItWorks from "@/components/view/HowItWorks/HowItWorks";
 import { WhoWeAre } from "@/components/view/WhoWeAre/WhoWeAre";
+import { WhyChooseUs } from "@/components/view/WhyChooseUs/WhyChooseUs";
 
 
 export default function HomePage() {
@@ -12,6 +13,7 @@ export default function HomePage() {
       <HowItWorks />
       <FeaturedServices />
       <WhoWeAre />
+      <WhyChooseUs />
     </div>
   )
 }
