@@ -1,0 +1,456 @@
+this is website packze.json / technology stack : - 
+-------------------------------------------------
+{
+  "name": "gobattery-car-repair-dubai",
+  "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.9.0",
+    "@remixicon/react": "^4.9.0",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.4.0",
+    "next": "16.3.8",
+    "next-themes": "^0.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "shadcn": "^4.21.4",
+    "tw-animate-css": "^1.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.8",
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
+
+this is component.json file : - 
+___________________________________
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "mist",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "remixicon",
+  "rtl": false,
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "registries": {}
+}
+-----------------------------------
+this is global.css file : - 
+___________________________________
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-serif);
+    --font-serif: var(--font-serif);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.148 0.004 228.8);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.148 0.004 228.8);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.148 0.004 228.8);
+    --primary: oklch(0.527 0.154 150.069);
+    --primary-foreground: oklch(0.982 0.018 155.826);
+    --secondary: oklch(0.967 0.001 286.375);
+    --secondary-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.963 0.002 197.1);
+    --muted-foreground: oklch(0.56 0.021 213.5);
+    --accent: oklch(0.963 0.002 197.1);
+    --accent-foreground: oklch(0.218 0.008 223.9);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.925 0.005 214.3);
+    --input: oklch(0.925 0.005 214.3);
+    --ring: oklch(0.723 0.014 214.4);
+    --chart-1: oklch(0.871 0.15 154.449);
+    --chart-2: oklch(0.723 0.219 149.579);
+    --chart-3: oklch(0.627 0.194 149.214);
+    --chart-4: oklch(0.527 0.154 150.069);
+    --chart-5: oklch(0.448 0.119 151.328);
+    --radius: 0;
+    --sidebar: oklch(0.987 0.002 197.1);
+    --sidebar-foreground: oklch(0.148 0.004 228.8);
+    --sidebar-primary: oklch(0.627 0.194 149.214);
+    --sidebar-primary-foreground: oklch(0.982 0.018 155.826);
+    --sidebar-accent: oklch(0.963 0.002 197.1);
+    --sidebar-accent-foreground: oklch(0.218 0.008 223.9);
+    --sidebar-border: oklch(0.925 0.005 214.3);
+    --sidebar-ring: oklch(0.723 0.014 214.4);
+}
+
+.dark {
+    --background: oklch(0.148 0.004 228.8);
+    --foreground: oklch(0.987 0.002 197.1);
+    --card: oklch(0.218 0.008 223.9);
+    --card-foreground: oklch(0.987 0.002 197.1);
+    --popover: oklch(0.218 0.008 223.9);
+    --popover-foreground: oklch(0.987 0.002 197.1);
+    --primary: oklch(0.448 0.119 151.328);
+    --primary-foreground: oklch(0.982 0.018 155.826);
+    --secondary: oklch(0.274 0.006 286.033);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.275 0.011 216.9);
+    --muted-foreground: oklch(0.723 0.014 214.4);
+    --accent: oklch(0.275 0.011 216.9);
+    --accent-foreground: oklch(0.987 0.002 197.1);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.56 0.021 213.5);
+    --chart-1: oklch(0.871 0.15 154.449);
+    --chart-2: oklch(0.723 0.219 149.579);
+    --chart-3: oklch(0.627 0.194 149.214);
+    --chart-4: oklch(0.527 0.154 150.069);
+    --chart-5: oklch(0.448 0.119 151.328);
+    --sidebar: oklch(0.218 0.008 223.9);
+    --sidebar-foreground: oklch(0.987 0.002 197.1);
+    --sidebar-primary: oklch(0.723 0.219 149.579);
+    --sidebar-primary-foreground: oklch(0.982 0.018 155.826);
+    --sidebar-accent: oklch(0.275 0.011 216.9);
+    --sidebar-accent-foreground: oklch(0.987 0.002 197.1);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.56 0.021 213.5);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-serif;
+    }
+}
+-------------------------------------------
+this is siteconfig file : - 
+----------------------------------
+import { RiFacebookCircleFill, RiInstagramFill, RiMailLine, RiMapPinLine, RiPhoneLine, RiPinterestFill, RiTwitterXFill, RiYoutubeFill } from "@remixicon/react";
+
+export const SiteConfig = {
+    authorName: "Md Zahid",
+    brandName: "Go Battery Car Repair Mobile Mechanic Dubai",
+    url: "https://www.gobatterycarrepairdubai.com ",
+    email: "gobatterycarrepair@gmail.com",
+    description: "Go Battery Car Repair Mobile Mechanic Dubai delivers 24/7 doorstep car repair and maintenance service across Dubai. Certified mechanics, transparent pricing, and a 5 to 30 minutes response time wherever your car breaks down, we come to you.",
+    displayNumber: "+971 50 941 1265",
+    ogImage:"/ogImage.png",
+    foundedYear:"2020",
+    phoneNumber: "+971509411265",
+    numberCallLink: "tel:+971509411265",
+    whatsappCallLink: "https://wa.me/971509411265",
+    streetAddress: "Jasmine Rd",
+    location: "Jabal Ali First - The Gardens",
+    city: "Dubai",
+    country: "UAE",
+    founded: 2014,
+    responseTime: "5 to 30 min",
+    GMB: {
+        PlaceID: "",
+        CID: "",
+        BusinessProfileID: "",
+        mapsLink: "https://maps.app.goo.gl/kR2dQRswWQfQ3emQ6",
+        embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1561.7914141282195!2d55.13214795428641!3d25.04275034326857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f132db3eddcd1%3A0x4d1b1d7d9835256e!2sJebel%20Ali%20Gardens%207!5e0!3m2!1sen!2sbd!4v1791626641220!5m2!1sen!2sbd",
+        latitude: "25.0427503",
+        longitude: "55.132148",
+    },
+    serviceAreas: [
+    {
+        name: "Jebel Ali Industrial Area",
+        slug: "jebel-ali-industrial-area"
+    },
+    {
+        name: "Discovery Gardens",
+        slug: "discovery-gardens"
+    },
+    {
+        name: "Al Furjan",
+        slug: "al-furjan"
+    },
+    {
+        name: "Dubai Investment Park First",
+        slug: "dubai-investment-park-first"
+    },
+    {
+        name: "Jumeirah Lakes Towers",
+        slug: "jumeirah-lakes-towers"
+    },
+    {
+        name: "Dubai Marina",
+        slug: "dubai-marina"
+    },
+    {
+        name: "Jumeirah Park",
+        slug: "jumeirah-park"
+    },
+    {
+        name: "Jumeirah Islands",
+        slug: "jumeirah-islands"
+    },
+    {
+        name: "Jumeirah Beach Residence",
+        slug: "jumeirah-beach-residence"
+    },
+    {
+        name: "Jebel Ali Freezone",
+        slug: "jebel-ali-freezone"
+    },
+    {
+        name: "Dubai Production City",
+        slug: "dubai-production-city"
+    },
+    {
+        name: "Dubai Sports City",
+        slug: "dubai-sports-city"
+    },
+    {
+        name: "Jabal Ali Industrial Second",
+        slug: "jabal-ali-industrial-second"
+    },
+    {
+        name: "Dubai South",
+        slug: "dubai-south"
+    },
+    {
+        name: "Madinat Latifa",
+        slug: "madinat-latifa"
+    },
+    {
+        name: "Dubai Investment Park Second",
+        slug: "dubai-investment-park-second"
+    }
+],
+
+    operatingHours: [
+        { day: "Saturday", hours: "24 Hours" },
+        { day: "Sunday", hours: "24 Hours" },
+        { day: "Monday", hours: "24 Hours" },
+        { day: "Tuesday", hours: "24 Hours" },
+        { day: "Wednesday", hours: "24 Hours" },
+        { day: "Thursday", hours: "24 Hours" },
+        { day: "Friday", hours: "24 Hours" },
+    ],
+
+    navItems: [
+        { name: "Home", href: "/" },
+        { name: "Services", href: "/services" },
+        { name: "Areas We Serve", href: "/area-we-serve" },
+        { name: "About", href: "/about" },
+        { name: "Contact", href: "/contact" },
+    ],
+
+    footerhrefs: [
+        { title: "About Us", href: "/about" },
+        { title: "Contact", href: "/contact" },
+        { title: "Services", href: "/services" },
+        { title: "Privacy Policy", href: "/privacy" },
+        { title: "Terms of Service", href: "/terms" },
+        { title: "Sitemap", href: "/sitemap.xml" }
+    ],
+
+    socialLinks: [
+        { name: "Facebook", icon: RiFacebookCircleFill, href: "https://www.facebook.com" },
+        { name: "Instagram", icon: RiInstagramFill, href: "https://www.instagram.com" },
+        { name: "Pinterest", icon: RiPinterestFill, href: "https://www.pinterest.com" },
+        { name: "YouTube", icon: RiYoutubeFill, href: "https://www.youtube.com" },
+        { name: "Twitter", icon: RiTwitterXFill, href: "https://x.com" },
+    ],
+
+    contactLinks: [
+        { name: "Map", icon: RiMapPinLine, href: "" },
+        { name: "Phone", icon: RiPhoneLine, href: "tel:+971509411265" },
+        { name: "Email", icon: RiMailLine, href: "mailto:dubaicarrepair@gmail.com" }
+    ]
+};
+
+export const {
+    contactLinks,
+    socialLinks,
+    footerhrefs,
+    navItems,
+    serviceAreas,
+    location,
+    streetAddress,
+    GMB,
+    numberCallLink,
+    whatsappCallLink,
+    operatingHours,
+    displayNumber,
+    description,
+    email,
+    url,
+    brandName,
+    authorName,
+    city,
+    country
+} = SiteConfig;
+
+
+
+/*
+24/7 availablility 
+fast Onsite Mobile Car Repair Service
+On-Site Battery & Repair
+10+ Years ASE-Certified
+All Makes & Models
+100% Genuine Parts
+Transparent & Fair Pricing
+Rapid Response Dispatch
+360° Safety Health Check
+No-Appointment Necessary
+Eco-Friendly Operations
+Customer-First Philosophy
+Rapid 5–15 Minute Onsite Arrival
+90% Onsite Repair Completion
+100% Transparent, Upfront Pricing
+24/7/365 Emergency Coverage
+Certified Mechanics & Service Warranty
+Happy Customer Rating
+100% Transparent Pricing
+Complete Onsite Diagnostic & Repair Capabilities
+Certified Technicians & Guaranteed Work
+Best Price Guarantee
+geniun battery and parts 
+certified and experienced technician 
+Expert mechanic 
+Dedicated Rescue Team 
+
+*/
+
+------------------------------------------------------
+
+this is business info : - 
+___________________________________
+export const aboutUs = {
+    para1: "Founded in 2014, Go Battery Car Repair Mobile Mechanic Dubai was built to eliminate the frustration, towing expenses, and wasted hours associated with traditional brick-and-mortar auto garages. As a premier 24/7 mobile car repair and roadside rescue service, we operate as a fully equipped garage on wheels. We dispatch certified, expert mechanics directly to your exact GPS location—whether you are stranded on a major highway shoulder, parked in your apartment basement, or at your workplace.",
+    para2: "From urgent on-site battery replacements and jump-starts to advanced computer diagnostics, electrical troubleshooting, and emergency mechanical fixes, our technicians deliver complete auto care wherever your car is parked. Headquartered near Jebel Ali and the bustling southern Dubai corridors, our mobile rescue units blanket key service areas including Jebel Ali Industrial Area, Discovery Gardens, Dubai Marina, Jumeirah Lakes Towers (JLT), Al Furjan, and Dubai South. Backed by a rapid 5 to 30 minutes emergency response time, upfront transparent pricing, and 100% genuine parts, we bring dependable dealership-level expertise straight to your door."
+};
+
+export const whyChooseUs = [
+    {
+        name: "Rapid 5–30 Minute Onsite Arrival",
+        description: "Our mobile mechanics are strategically stationed across key Dubai highway arteries and commercial hubs, allowing us to deliver the fastest emergency dispatch and roadside response times when you need help most."
+    },
+    {
+        name: "Complete Onsite Diagnostic & Repair Capabilities",
+        description: "Equipped with state-of-the-art diagnostic scanners and specialized tools, our certified technicians resolve up to 90% of vehicle breakdowns right on the spot—completely eliminating the cost and hassle of flatbed towing."
+    },
+    {
+        name: "100% Genuine Batteries & OEM Parts",
+        description: "We supply and install only authentic, factory-approved batteries (such as Varta, Amaron, and ACDelco) and genuine replacement components, ensuring long-term durability and peak performance for all vehicle makes and models."
+    },
+    {
+        name: "100% Transparent, Upfront Pricing",
+        description: "No hidden fees, no surprise call-out charges, and no inflated workshop invoices. We provide clear, itemized pricing before starting any repair work so you always know exactly what you are paying for."
+    },
+    {
+        name: "24/7/365 Round-the-Clock Emergency Coverage",
+        description: "Car troubles don't keep regular business hours. Our dedicated rescue teams operate 24 hours a day, 7 days a week across all weekends and public holidays throughout Dubai and surrounding areas."
+    },
+    {
+        name: "Certified Technicians & Guaranteed Workmanship",
+        description: "Every service is performed by seasoned, multi-brand auto mechanics with years of hands-on expertise. We back our craftsmanship with solid service guarantees to give you complete peace of mind on the road."
+    }
+];
+
+
+-----------------------------------------------------
+
+i have provide all information of website....i want to develop this website step by step....this website design must be world class ultra modern , beautiful , responsive , professional , very efficative , responsive for all devices , don't use any animation library or extra animation,,,,i provide one by one component name  you have to design the component,,,,,,
+
+first you have to design a beautiful , unique, efficative , world class ultra modern design , responsive hero section for this website using tailwindcss , shadcnui component, remixicon for icon ,,,, so design it,,,,i provide global.css and shadcnui component file,,,, use my brand primary color,,, and support color is white or black ,,,, so design a best hero section ,,, responsive font 
+
+now you have to design a world class ultra modern and very professional mind blowing efficative and best who choose us  section three step which very unique and modern
+
+
+now you have to design a world class ultra modern and very professional mind blowing efficative and best page which very unique and modern
+
+ short hero professional responsive section
+show  
+below others content 
+
+make it best, professional , responsive , world class ultra modern and optimize code
+
+-------------------------------------
+i have provide a referance footer...now you have to design a world class ultra modern , unique and different from referance footer component , very professional mind blowing efficative and best footer component three step which very unique and modern
+-------------------------------------
+
+i have provide referance project card , project modal and project component,,,,,now you have to design a world class ultra modern , very professional mind blowing efficative and best who choose us  section three step which very unique and modern
+
+-> project card and component totally different from referance project card and component,,, it must more world class ultra modern design , unique and professional and responsive
