@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
+import Hero from "@/components/view/Hero/Hero";
 
 
 export default function HomePage() {
   return (
     <div>
-      <h1>Hello AutoBatt</h1>
-<Button > Hello download</Button>
+<Hero />
     </div>
   )
 }
