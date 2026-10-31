@@ -55,7 +55,7 @@ const serviceCategories = [
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services", hasDropdown: true },
-  { name: "Areas", href: "/service-area" },
+  { name: "Area We Serve", href: "/service-area" },
   { name: "About", href: "/about-us" },
   { name: "Contact", href: "/contact-us" },
 ];
