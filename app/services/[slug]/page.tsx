@@ -4,6 +4,7 @@ import { services } from "@/data/services/services";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { SiteConfig } from "@/config/siteConfig";
+import ServiceDetailPage from "@/components/pages/ServicePage/ServiceDetailPage";
 
 
 /* ============ Dynamic Metadata ============ */
