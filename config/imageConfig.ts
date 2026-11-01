@@ -4,7 +4,7 @@ import hero2 from "../assets/dubai-car-repair-images/hero-2.jpg";
 import hero3 from "../assets/dubai-car-repair-images/hero-3.jpg";
 
 
-import logo from "../assets/logo/logo-ft.png"
+import logo from "../assets/logo/logo.png"
 
 
 //service banners

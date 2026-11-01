@@ -103,7 +103,7 @@ export function Navbar() {
       ============================================================ */}
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 w-full transition-all py-2 duration-300 ease-out",
+          "fixed inset-x-0 top-0 z-50 w-full transition-all py-2 duration-300 ease-out px-15",
           isScrolled
             ? "border-b border-neutral-900/10 bg-white/95 shadow-[0_4px_24px_-12px_rgba(0,0,0,0.12)] backdrop-blur-xl"
             : "border-b border-neutral-900/10 bg-[#faf9f7]/95 backdrop-blur-md"
@@ -118,7 +118,7 @@ export function Navbar() {
         />
 
         {/* Inner content container — centered but the bar itself is full width */}
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="">
           <div
             className={cn(
               "flex w-full items-center justify-between gap-3 transition-all duration-300",
@@ -128,9 +128,9 @@ export function Navbar() {
             {/* ============ Logo ============ */}
             <Link
               href="/"
-              className="relative flex shrink-0 items-center transition-transform hover:scale-[1.02]"
+              className="relative flex shrink-0 -mt-5"
             >
-              <div className="h-8 w-auto sm:h-10">
+              <div className="h-28 w-54 sm:h-10">
                 <Logo />
               </div>
             </Link>
