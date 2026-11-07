@@ -65,7 +65,7 @@ export default function Hero() {
     const rowTwo = serviceAreas?.slice(half) || [];
 
     return (
-        <section className="relative w-full overflow-hidden bg-background">
+        <section className="relative w-full overflow-hidden bg-background py-20">
             {/* ============================================================
                 BACKGROUND — Multi-layer atmosphere
             ============================================================ */}
@@ -218,11 +218,11 @@ export default function Hero() {
 
                             {/* Decorative dotted ring behind */}
                             <div className="pointer-events-none absolute -inset-4 hidden lg:block">
-                                <div className="absolute inset-0 rounded-[2rem] border border-dashed border-primary/15" />
+                                <div className="absolute inset-0 rounded border border-dashed border-primary/15" />
                             </div>
 
                             {/* Main image card */}
-                            <div className="relative aspect-[4/4] w-full overflow-hidden border border-border/80 bg-muted shadow-2xl shadow-primary/10">
+                            <div className="relative aspect-[4/3] w-full overflow-hidden border border-border/80 bg-muted shadow-2xl shadow-primary/10">
                                 <Image
                                     src={heroBanner?.hero}
                                     alt="Certified mobile car mechanic repairing a vehicle on-site in Dubai"

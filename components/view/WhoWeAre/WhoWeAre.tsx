@@ -90,7 +90,7 @@ export function WhoWeAre() {
     const { foundedYear, brandName, city } = SiteConfig;
 
     return (
-        <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-24">
+        <section className="relative overflow-hidden bg-background py-10">
             {/* ============================================================
                 BACKGROUND — Layered editorial atmosphere
             ============================================================ */}
@@ -151,7 +151,7 @@ export function WhoWeAre() {
                             <div className="absolute -left-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-primary/25 sm:block" />
 
                             {/* Main image */}
-                            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-muted shadow-2xl shadow-primary/10">
+                            <div className="relative aspect-[4/5] w-full overflow-hidden rounded bg-muted shadow-2xl shadow-primary/10">
                                 <Image
                                     src={heroBanner?.hero}
                                     alt={`Certified mobile car mechanic team in ${city}`}
