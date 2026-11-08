@@ -1,0 +1,127 @@
+export const alRiggaArea = {
+  id: 2,
+  slug: "al-rigga",
+  name: "Al Rigga",
+  responseTime: "5–15 Minutes",
+  coordinates: {
+    lat: 25.2631,
+    lng: 55.3182,
+  },
+  hero: {
+    title: "Mobile Mechanic & Car Repair in Al Rigga Dubai",
+    subtitle: "24/7 mobile car repair, emergency roadside assistance, battery replacement, jump start, and AC repair near Al Rigga Metro Station, Rigga Road hotels, and commercial towers.",
+  },
+  seo: {
+    title: "Mobile Mechanic Al Rigga Dubai | 24/7 Car Repair & Battery",
+    description: "Fast mobile mechanic in Al Rigga Dubai. AutoBatt provides 24/7 on-site car battery replacement, emergency jump starts, AC repair, and roadside assistance.",
+  },
+  overviewSection: {
+    title: "Professional Mobile Car Repair in Al Rigga Dubai",
+    heading: "Reliable On-Site Mechanic Services Along Al Rigga Road",
+    description: "Al Rigga is one of Dubai's busiest commercial and hotel hubs. When vehicle troubles strike near Al Rigga Metro Station or local hotels, AutoBatt delivers rapid mobile mechanic dispatch directly from nearby Deira.",
+    descriptionTwo: "We provide comprehensive on-site solutions including battery swaps, alternator repairs, computer diagnostics, brake servicing, and emergency jump starts. Avoid the hassle of towing your car—our certified mechanics service your vehicle right where it stands.",
+    highlights: [
+      "5–15 Min Response Time to Al Rigga",
+      "24/7 Emergency Roadside Support",
+      "On-Site Battery Testing & Replacement",
+      "Mobile AC Gas Refill & Cooling Service",
+      "Expert Computerized Diagnostics",
+      "Zero Towing Required",
+    ],
+  },
+  emergencyContentSection: {
+    title: "24/7 Emergency Roadside Assistance in Al Rigga",
+    heading: "Instant Breakdown Recovery in Al Rigga Commercial & Hotel Districts",
+    description: "Stranded on Rigga Road or in a crowded hotel basement? Our emergency response team specializes in rapid on-site troubleshooting for all vehicle makes.",
+    descriptionTwo: "We carry specialized tools and genuine parts to resolve dead batteries, electrical faults, engine overheating, and starting failures instantly.",
+    emergencyServices: [
+      "Emergency Battery Replacement",
+      "Al Rigga Roadside Assistance",
+      "Car Jump Start Service",
+      "On-Site Computer Diagnostics",
+      "Mobile Mechanic Dispatch",
+      "Alternator & Starter Repair",
+      "AC Gas Refill On-Site",
+      "Vehicle Breakdown Recovery",
+    ],
+  },
+  servicesGridSection: {
+    title: "Our Car Repair Services in Al Rigga",
+    subtitle: "Professional mobile mechanic services tailored for Al Rigga drivers.",
+  },
+  whyChooseUsSection: {
+    title: "Why Al Rigga Drivers Trust AutoBatt",
+    subtitle: "Unmatched speed, professional expertise, and upfront transparent pricing.",
+    items: [
+      { title: "Rapid Dispatch", description: "Minutes away from your location in Al Rigga." },
+      { title: "Certified Experts", description: "Experienced mechanics for European, Asian, and American cars." },
+      { title: "Genuine Parts", description: "Factory-approved replacement parts with full warranty." },
+      { title: "24/7 Availability", description: "Day or night emergency assistance across Al Rigga." },
+      { title: "Transparent Pricing", description: "No hidden charges, honest estimates upfront." },
+      { title: "Doorstep Service", description: "Repairs completed right in your parking spot." },
+    ],
+  },
+  customerProblemsSection: {
+    title: "Frequent Car Troubles in Al Rigga",
+    subtitle: "Common issues resolved daily by our mobile team in Al Rigga.",
+    problems: [
+      { title: "Dead Battery", description: "Sudden failure to start after parking in hotel or commercial basements." },
+      { title: "AC Cooling Loss", description: "Hot air blowing due to heavy city stop-and-go driving." },
+      { title: "Starting Issues", description: "Starter motor or alternator malfunction." },
+      { title: "Warning Lights", description: "Check engine and ABS errors diagnosed on-site." },
+      { title: "Brake Wear", description: "Worn pads and noisy brakes serviced instantly." },
+      { title: "Engine Overheat", description: "Coolant leaks and radiator problems resolved." },
+    ],
+  },
+  narrativeLandmarksSection: {
+    title: "Al Rigga Landmarks We Cover",
+    subtitle: "Fast mobile mechanic arrival near key Al Rigga locations.",
+    landmarks: [
+      { name: "Al Rigga Metro Station", description: "Immediate roadside assistance near metro exits." },
+      { name: "Rigga Road Hotels", description: "On-site battery and mechanical repair for hotel guests and visitors." },
+      { name: "Commercial Towers", description: "Basement parking vehicle diagnostics and jump starts." },
+    ],
+  },
+  faqSection: {
+    title: "Frequently Asked Questions",
+    subtitle: "Quick answers about our Al Rigga mobile mechanic services.",
+    faqs: [
+      { question: "How quickly can you arrive in Al Rigga?", answer: "Our average arrival time in Al Rigga is 5 to 15 minutes." },
+      { question: "Do you replace car batteries on-site in Al Rigga?", answer: "Yes, with genuine batteries and official warranty." },
+      { question: "Can you repair car AC in Al Rigga parking lots?", answer: "Yes, our mobile units handle complete on-site AC repair and gas refilling." },
+    ],
+  },
+  internalLinksSection: {
+    title: "Explore More Services",
+    subtitle: "Other services available across Dubai.",
+    links: [
+      { name: "Car Battery Replacement Dubai", href: "/dubai/services/car-battery-replacement" },
+      { name: "Mobile Mechanic Dubai", href: "/dubai/services/mobile-mechanic" },
+      { name: "Car AC Repair Dubai", href: "/dubai/services/car-ac-repair" },
+    ],
+  },
+  reviewsSection: {
+    title: "Customer Reviews",
+    subtitle: "What Al Rigga drivers say about us.",
+    reviews: [
+      { name: "Mansoor A.", rating: 5, service: "Battery Swap", text: "Got stranded near Al Rigga metro. They arrived in 10 minutes and changed my battery instantly!" },
+    ],
+  },
+  nearbyAreasSection: {
+    title: "Nearby Areas",
+    subtitle: "Other areas we cover nearby.",
+    areas: [
+      { name: "Deira", slug: "deira" },
+      { name: "Al Garhoud", slug: "al-garhoud" },
+      { name: "Port Saeed", slug: "port-saeed" },
+    ],
+  },
+  relatedBlogs: [
+    { title: "Signs Your Car Battery Needs Replacement in Dubai", slug: "signs-your-car-battery-needs-replacement" },
+  ],
+  schema: {
+    serviceType: "Mobile Car Repair",
+    areaServed: "Al Rigga Dubai",
+    priceRange: "$$",
+  },
+};
