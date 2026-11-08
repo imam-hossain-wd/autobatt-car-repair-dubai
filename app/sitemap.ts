@@ -1,4 +1,5 @@
 import { SiteConfig } from "@/config/siteConfig";
+import { getServiceAreasNameSlug } from "@/utils/getServiceAreasNameSlug";
 import { getServicesNameSlug } from "@/utils/getServiceNameSlug";
 
 export default async function sitemap(){
@@ -6,6 +7,7 @@ export default async function sitemap(){
   const currentDate = new Date().toISOString();
 
   const services = getServicesNameSlug();
+  const serviceAreas= getServiceAreasNameSlug();
   const staticPages = [
     "/",
     "/services",
@@ -13,6 +15,8 @@ export default async function sitemap(){
     "/about-us",
     "/contact-us",
     "/projects",
+    "/privacy",
+    "/terms",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
@@ -27,5 +31,12 @@ export default async function sitemap(){
     priority: 0.9,
   }));
 
-  return [...staticPages, ...servicePages];
+  const areaPages = (serviceAreas || []).map((area) => ({
+    url: `${baseUrl}/service-area/${area.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
+
+  return [...staticPages, ...servicePages, ...areaPages];
 }
