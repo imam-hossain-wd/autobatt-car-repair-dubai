@@ -101,14 +101,25 @@ export function Navbar() {
       {/* ============================================================
           FULL-WIDTH STICKY HEADER — pinned to top, edge-to-edge
       ============================================================ */}
-      <header
+      {/* <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 w-full transition-all py-2 duration-300 ease-out px-15",
           isScrolled
             ? "border-b border-neutral-900/10 bg-white/95 shadow-[0_4px_24px_-12px_rgba(0,0,0,0.12)] backdrop-blur-xl"
             : "border-b border-neutral-900/10 bg-[#faf9f7]/95 backdrop-blur-md"
         )}
-      >
+      > */}
+
+      <header
+  className={cn(
+    "fixed inset-x-0 top-0 z-50 w-full px-3 sm:px-5 lg:px-8 xl:px-12 2xl:px-16",
+    "transition-all duration-300 ease-out",
+    isScrolled
+      ? "border-b border-neutral-900/10 bg-white/95 shadow-[0_4px_24px_-12px_rgba(0,0,0,0.12)] backdrop-blur-xl"
+      : "border-b border-neutral-900/10 bg-[#faf9f7]/95 backdrop-blur-md"
+  )}
+>
+
         {/* Top accent hairline — appears on scroll */}
         <span
           className={cn(
@@ -118,25 +129,27 @@ export function Navbar() {
         />
 
         {/* Inner content container — centered but the bar itself is full width */}
-        <div className="">
-          <div
-            className={cn(
-              "flex w-full items-center justify-between gap-3 transition-all duration-300",
-              isScrolled ? "h-14 sm:h-16" : "h-16 sm:h-20"
-            )}
-          >
+<div className="mx-auto w-full max-w-[1600px]">
+  <div
+    className={cn(
+      "flex w-full items-center justify-between gap-3 transition-all duration-300",
+      isScrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
+    )}
+  >
             {/* ============ Logo ============ */}
-            <Link
-              href="/"
-              className="relative flex shrink-0 -mt-5"
-            >
-              <div className="h-28 w-54 sm:h-10">
-                <Logo />
-              </div>
-            </Link>
+          <Link
+      href="/"
+      aria-label="Go to homepage"
+      className="flex shrink-0 items-center"
+    >
+      <div className="h-11 w-36 sm:h-12 sm:w-40 lg:h-14 lg:w-48 xl:h-16 xl:w-52">
+        <Logo />
+      </div>
+    </Link>
 
             {/* ============ Desktop Nav ============ */}
-            <nav className="hidden items-center gap-0.5 lg:flex">
+            {/* <nav className="hidden items-center gap-0.5 lg:flex"> */}
+            <nav className="hidden flex-1 items-center justify-center gap-0.5 lg:flex xl:gap-1">
               {navItems.map((item) => {
                 const isActive =
                   pathname === item.href ||
@@ -229,7 +242,7 @@ export function Navbar() {
                           </div>
 
                           {/* Categories */}
-                          <div className="grid grid-cols-3 divide-x divide-neutral-900/10">
+                          {/* <div className="grid grid-cols-3 divide-x divide-neutral-900/10">
                             {serviceCategories.map((cat) => {
                               const Icon = cat.icon;
                               const [start, end] = cat.range;
@@ -273,7 +286,27 @@ export function Navbar() {
                                 </div>
                               );
                             })}
-                          </div>
+                          </div> */}
+                          {/* All Services */}
+<div className="grid grid-cols-2 gap-x-6 gap-y-1 p-5 sm:grid-cols-3 sm:p-7">
+  {services.map((service, index) => (
+    <Link
+      key={service.slug}
+      href={`/services/${service.slug}`}
+      className="group flex min-w-0 items-center gap-2 rounded-lg px-2.5 py-3 text-[12px] font-medium text-neutral-600 transition-all hover:bg-primary/5 hover:text-primary sm:text-[13px]"
+    >
+      <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-neutral-100 text-[10px] font-bold text-neutral-500 transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
+      <span className="min-w-0 flex-1 truncate">
+        {service.name}
+      </span>
+
+      <RiArrowRightUpLine className="size-3 shrink-0 text-primary opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+    </Link>
+  ))}
+</div>
 
                           {/* Footer */}
                           <div className="flex items-center justify-between gap-4 border-t border-neutral-900/10 bg-neutral-50/60 px-7 py-4">
@@ -299,29 +332,23 @@ export function Navbar() {
 
             {/* ============ Right cluster ============ */}
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <button
-                aria-label="Search"
-                className="hidden h-9 w-9 items-center justify-center rounded-lg text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 md:flex"
-              >
-                <RiSearchLine className="size-4" />
-              </button>
-
-              <Link
+                            <Link
                 href={SiteConfig.whatsappCallLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="hidden h-9 w-9 items-center justify-center rounded-lg text-emerald-600 transition-colors hover:bg-emerald-50 sm:flex"
+                className="group relative hidden h-9 items-center gap-2 overflow-hidden rounded-lg bg-green-500 px-3.5 text-[12px] font-bold text-white transition-all hover:bg-green-600 sm:inline-flex"
               >
-                <RiWhatsappFill className="size-4" />
+                  <RiWhatsappFill className="size-4" />
+                <span className="hidden md:inline">Whatsapp</span>
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
               </Link>
+
+
 
               <Link
                 href={SiteConfig.numberCallLink}
-                className="group relative hidden h-9 items-center gap-2 overflow-hidden rounded-lg bg-neutral-900 px-3.5 text-[12px] font-bold text-white transition-all hover:bg-neutral-800 sm:inline-flex"
+                className="group relative hidden h-9 items-center gap-2 overflow-hidden rounded-lg bg-primary px-3.5 text-[12px] font-bold text-white transition-all hover:bg-neutral-800 sm:inline-flex"
               >
                 <RiPhoneFill className="size-3.5" />
-                <span className="hidden sm:inline">Call Now</span>
+                <span className="hidden md:inline">{SiteConfig.displayNumber}</span>
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
               </Link>
 
@@ -329,7 +356,7 @@ export function Navbar() {
                 onClick={() => setIsMobileMenuOpen((v) => !v)}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
-                className="relative flex size-9 items-center justify-center rounded-lg bg-neutral-900 text-white transition-colors hover:bg-neutral-800 lg:hidden"
+                className="relative flex size-9 items-center justify-center rounded-lg bg-primary text-white transition-colors hover:bg-neutral-800 lg:hidden"
               >
                 {isMobileMenuOpen ? (
                   <RiCloseLine className="size-4" />
@@ -340,6 +367,8 @@ export function Navbar() {
             </div>
           </div>
         </div>
+
+
       </header>
 
       {/* ============================================================
@@ -401,9 +430,6 @@ export function Navbar() {
                         )}
                       >
                         <div className="flex items-center gap-3">
-                          <span className="font-serif text-[11px] italic text-primary/60">
-                            0{i + 1}
-                          </span>
                           <span className="text-[15px] font-semibold tracking-tight">
                             {item.name}
                           </span>
@@ -437,20 +463,15 @@ export function Navbar() {
                       >
                         <div className="min-h-0">
                           <div className="ml-6 mt-1 space-y-4 border-l border-neutral-900/10 pb-4 pl-4">
-                            {serviceCategories.map((cat) => {
-                              const Icon = cat.icon;
-                              const [start, end] = cat.range;
-                              const catServices = services.slice(start, end);
+                            {services.map((cat) => {
+                              // const Icon = cat.icon;
+                              // const [start, end] = cat.range;
+                              // const catServices = services.slice(start, end);
                               return (
-                                <div key={cat.name}>
-                                  <div className="mb-2 flex items-center gap-1.5">
-                                    <Icon className="size-3 text-primary" />
-                                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-500">
-                                      {cat.name}
-                                    </span>
-                                  </div>
+                                <div key={cat.slug}>
+                  
                                   <ul className="space-y-0.5">
-                                    {catServices.map((s) => (
+                                    {services.map((s) => (
                                       <li key={s.slug}>
                                         <Link
                                           href={`/services/${s.slug}`}
@@ -463,17 +484,9 @@ export function Navbar() {
                                       </li>
                                     ))}
                                   </ul>
-                                </div>
+                                </div> 
                               );
                             })}
-                            <Link
-                              href="/services"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.15em] text-primary"
-                            >
-                              All services
-                              <RiArrowRightLine className="size-3" />
-                            </Link>
                           </div>
                         </div>
                       </div>
@@ -494,9 +507,6 @@ export function Navbar() {
                     )}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="font-serif text-[11px] italic text-primary/60">
-                        0{i + 1}
-                      </span>
                       <span className="text-[15px] font-semibold tracking-tight">
                         {item.name}
                       </span>
@@ -506,92 +516,6 @@ export function Navbar() {
                 );
               })}
             </nav>
-
-            <div className="my-6 h-px bg-neutral-900/10" />
-
-            <div className="space-y-3">
-              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-500">
-                Direct Line
-              </p>
-
-              <Link
-                href={SiteConfig.numberCallLink}
-                className="group flex items-center gap-3 rounded-xl border border-neutral-900/10 bg-white p-3 transition-colors hover:border-neutral-900/25"
-              >
-                <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-white">
-                  <RiPhoneFill className="size-3.5" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-neutral-500">
-                    Call 24/7
-                  </p>
-                  <p className="mt-0.5 truncate text-[13px] font-bold text-neutral-900">
-                    {SiteConfig.displayNumber}
-                  </p>
-                </div>
-                <RiArrowRightUpLine className="size-3.5 text-neutral-400 group-hover:text-primary" />
-              </Link>
-
-              <Link
-                href={SiteConfig.whatsappCallLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-xl border border-emerald-600/25 bg-emerald-50 p-3 transition-colors hover:border-emerald-600/60"
-              >
-                <span className="flex size-9 items-center justify-center rounded-lg bg-emerald-600 text-white">
-                  <RiWhatsappFill className="size-3.5" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-emerald-700">
-                    WhatsApp
-                  </p>
-                  <p className="mt-0.5 text-[13px] font-bold text-emerald-800">
-                    Chat instantly
-                  </p>
-                </div>
-                <RiArrowRightUpLine className="size-3.5 text-emerald-600 group-hover:text-emerald-800" />
-              </Link>
-
-              <Link
-                href={`mailto:${SiteConfig.email}`}
-                className="group flex items-center gap-3 rounded-xl border border-neutral-900/10 bg-white p-3 transition-colors hover:border-neutral-900/25"
-              >
-                <span className="flex size-9 items-center justify-center rounded-lg bg-neutral-900 text-white">
-                  <RiMailFill className="size-3.5" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-neutral-500">
-                    Email
-                  </p>
-                  <p className="mt-0.5 truncate text-[12px] font-semibold text-neutral-900">
-                    {SiteConfig.email}
-                  </p>
-                </div>
-                <RiArrowRightUpLine className="size-3.5 text-neutral-400 group-hover:text-primary" />
-              </Link>
-            </div>
-
-            <div className="mt-6 flex items-start gap-2 rounded-xl border border-neutral-900/10 bg-white/50 p-3">
-              <RiMapPinLine className="mt-0.5 size-3.5 shrink-0 text-primary" />
-              <p className="text-[11px] leading-relaxed text-neutral-600">
-                {SiteConfig.streetAddress}, {SiteConfig.location}
-                <br />
-                <span className="text-neutral-500">
-                  {SiteConfig.city}, {SiteConfig.country}
-                </span>
-              </p>
-            </div>
-
-            <div className="mt-6 flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500">
-              <span className="inline-flex items-center gap-1">
-                <RiStarFill className="size-2.5 text-primary" />
-                5.0
-              </span>
-              <span className="size-1 rounded-full bg-neutral-300" />
-              <span>500+ Reviews</span>
-              <span className="size-1 rounded-full bg-neutral-300" />
-              <span>24/7</span>
-            </div>
           </div>
         </aside>
       </div>

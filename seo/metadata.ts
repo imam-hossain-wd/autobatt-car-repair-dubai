@@ -6,11 +6,12 @@ export const siteMetadata = {
     title: `24/7 Car Battery & Auto Repair Mobile Mechanic in Dubai | ${SiteConfig.brandName}`,
     description: `Emergency roadside mobile car repair and battery replacement in Dubai. Certified mechanics arrive in 5–30 min. Genuine parts & upfront pricing. Call ${SiteConfig.displayNumber}!`,
     verification: {
-      google: "",
+      google: "dosmIYwfyfvlqcGpXzWJfi0HeJkglOywj55hA8zemRc",
     },
     alternates: {
       canonical: SiteConfig.url,
     },
+
     openGraph: {
       title: `24/7 Car Battery & Auto Repair Mobile Mechanic in Dubai | ${SiteConfig.brandName}`,
       description: `Emergency roadside mobile car repair and battery replacement in Dubai. Certified mechanics arrive in 5–30 min. Genuine parts & upfront pricing. Call ${SiteConfig.displayNumber}!`,

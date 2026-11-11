@@ -5,15 +5,15 @@ export const SiteConfig = {
     brandName: "AutoBatt Car Repair Mobile Mechanic Dubai",
     url: "https://www.autobattcarrepairdubai.com",
     email: "autobattcarrepair@gmail.com",
-    description: "Auto Batt Car Repair Mobile Mechanic Dubai delivers 24/7 doorstep car repair and maintenance service across Dubai. Certified mechanics, transparent pricing, and a 5 to 30 minutes response time wherever your car breaks down, we come to you.",
-    displayNumber: "+971 54 225 7011",
+    description: "AutoBatt Car Repair Mobile Mechanic Dubai is your trusted Fast & Professional 24/7 car repair and expert mechanic service to your doorstep. Certified mechanics, transparent pricing, and a 5 to 30 minutes response time wherever your car breaks down, we come to you.",
+    displayNumber: "+971 55 101 1096",
     ogImage: "/ogImage.png",
     foundedYear: "2020",
-    phoneNumber: "+971542257011",
-    numberCallLink: "tel:+971542257011",
-    whatsappCallLink: "https://wa.me/971542257011",
-    streetAddress: "62 Sikka 20a St, Deira",
-    location: "Al Wuheida",
+    phoneNumber: "+971551011096",
+    numberCallLink: "tel:+971551011096",
+    whatsappCallLink: "https://wa.me/971551011096",
+    streetAddress: "62 Sikka 20a St",
+    location: "Al Wuheida, Deira",
     city: "Dubai",
     country: "UAE",
     founded: 2014,
@@ -138,16 +138,16 @@ export const SiteConfig = {
     ],
 
     socialLinks: [
-        { name: "Facebook", icon: RiFacebookCircleFill, href: "https://www.facebook.com" },
+        { name: "Facebook", icon: RiFacebookCircleFill, href: "https://www.facebook.com/autobattcarrepairdubai/" },
         { name: "Instagram", icon: RiInstagramFill, href: "https://www.instagram.com" },
-        { name: "Pinterest", icon: RiPinterestFill, href: "https://www.pinterest.com" },
-        { name: "YouTube", icon: RiYoutubeFill, href: "https://www.youtube.com" },
+        { name: "Pinterest", icon: RiPinterestFill, href: "https://www.pinterest.com/autobattcarrepairdubai/" },
+        { name: "YouTube", icon: RiYoutubeFill, href: "https://www.youtube.com/@autobattcarrepairdubai" },
         { name: "Twitter", icon: RiTwitterXFill, href: "https://x.com" },
     ],
 
     contactLinks: [
         { name: "Map", icon: RiMapPinLine, href: "" },
-        { name: "Phone", icon: RiPhoneLine, href: "tel:+971509411265" },
+        { name: "Phone", icon: RiPhoneLine, href: "tel:+971551011096" },
         { name: "Email", icon: RiMailLine, href: "mailto:dubaicarrepair@gmail.com" }
     ]
 };

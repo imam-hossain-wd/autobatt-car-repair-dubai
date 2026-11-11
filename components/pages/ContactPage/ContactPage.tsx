@@ -1,6 +1,6 @@
+// app/(marketing)/contact/page.tsx
 
 import Link from "next/link";
-
 import {
   RiMapPinFill,
   RiArrowRightLine,
@@ -11,66 +11,14 @@ import {
   RiPhoneFill,
   RiMailFill,
   RiWhatsappFill,
-  RiNavigationFill,
   RiCheckLine,
   RiStarFill,
-  RiVerifiedBadgeFill,
   RiUserFill,
   RiMessageFill,
   RiServiceFill,
   RiCalendarCheckFill,
-  RiArrowDownLine,
 } from "@remixicon/react";
 import { SiteConfig } from "@/config/siteConfig";
-
-
-
-/* ============ Contact Channels ============ */
-const CONTACT_CHANNELS = [
-  {
-    index: "01",
-    icon: RiPhoneFill,
-    label: "Call dispatch",
-    value: SiteConfig.displayNumber,
-    href: SiteConfig.numberCallLink,
-    description: "Instant line — under 1 minute pickup",
-    primary: true,
-  },
-  {
-    index: "02",
-    icon: RiWhatsappFill,
-    label: "WhatsApp",
-    value: "Chat now",
-    href: SiteConfig.whatsappCallLink,
-    description: "Send location + issue for instant help",
-    external: true,
-  },
-  {
-    index: "03",
-    icon: RiMailFill,
-    label: "Email",
-    value: SiteConfig.email,
-    href: `mailto:${SiteConfig.email}`,
-    description: "For quotes and non-urgent inquiries",
-  },
-  {
-    index: "04",
-    icon: RiMapPinFill,
-    label: "Workshop",
-    value: "Jebel Ali · The Gardens",
-    href: SiteConfig.GMB.mapsLink,
-    description: "Jasmine Rd, Jabal Ali First, Dubai",
-    external: true,
-  },
-];
-
-/* ============ Trust Points ============ */
-const TRUST_POINTS = [
-  { icon: RiTimeFill, title: "5–30 min", subtitle: "Response" },
-  { icon: RiShieldCheckFill, title: "Certified", subtitle: "Mechanics" },
-  { icon: RiCustomerServiceFill, title: "24/7", subtitle: "Available" },
-  { icon: RiStarFill, title: "5.0", subtitle: "Rating" },
-];
 
 export default function ContactPage() {
   const {
@@ -83,7 +31,56 @@ export default function ContactPage() {
     country,
     responseTime,
     GMB,
+    streetAddress,
+    serviceAreas,
   } = SiteConfig;
+
+  /* ============ Contact Channels (now dynamic) ============ */
+  const CONTACT_CHANNELS = [
+    {
+      index: "01",
+      icon: RiPhoneFill,
+      label: "Call dispatch",
+      value: displayNumber,
+      href: numberCallLink,
+      description: "Instant line — under 1 minute pickup",
+      primary: true,
+    },
+    {
+      index: "02",
+      icon: RiWhatsappFill,
+      label: "WhatsApp",
+      value: "Chat now",
+      href: whatsappCallLink,
+      description: "Send location + issue for instant help",
+      external: true,
+    },
+    {
+      index: "03",
+      icon: RiMailFill,
+      label: "Email",
+      value: email,
+      href: `mailto:${email}`,
+      description: "For quotes and non-urgent inquiries",
+    },
+    {
+      index: "04",
+      icon: RiMapPinFill,
+      label: "Workshop",
+      value: location,
+      href: GMB.mapsLink,
+      description: `${streetAddress}, ${city}`,
+      external: true,
+    },
+  ];
+
+  /* ============ Trust Points (dynamic) ============ */
+  const TRUST_POINTS = [
+    { icon: RiTimeFill, title: responseTime, subtitle: "Response" },
+    { icon: RiShieldCheckFill, title: "Certified", subtitle: "Mechanics" },
+    { icon: RiCustomerServiceFill, title: "24/7", subtitle: "Available" },
+    { icon: RiStarFill, title: "5.0", subtitle: "Rating" },
+  ];
 
   return (
     <main className="relative w-full overflow-hidden bg-[#faf9f7] text-neutral-900">
@@ -141,19 +138,21 @@ export default function ContactPage() {
 
               {/* Trust ticks */}
               <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-y border-neutral-900/10 py-4">
-                {["24/7 emergency line", "No call-out fees", "Upfront pricing"].map(
-                  (item) => (
-                    <li
-                      key={item}
-                      className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-600"
-                    >
-                      <span className="flex size-4 items-center justify-center rounded-full bg-primary/15">
-                        <RiCheckLine className="size-2.5 text-primary" />
-                      </span>
-                      {item}
-                    </li>
-                  )
-                )}
+                {[
+                  "24/7 emergency line",
+                  "No call-out fees",
+                  "Upfront pricing",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-600"
+                  >
+                    <span className="flex size-4 items-center justify-center rounded-full bg-primary/15">
+                      <RiCheckLine className="size-2.5 text-primary" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
               </ul>
 
               {/* CTAs */}
@@ -223,7 +222,7 @@ export default function ContactPage() {
                 Where to reach us.
               </h2>
 
-              {/* Channel list — index style */}
+              {/* Channel list */}
               <div className="mt-8 divide-y divide-neutral-900/10 border-y border-neutral-900/10">
                 {CONTACT_CHANNELS.map((channel) => {
                   const Icon = channel.icon;
@@ -236,12 +235,10 @@ export default function ContactPage() {
                         : {})}
                       className="group relative flex items-start gap-4 py-5 transition-colors hover:bg-neutral-50/60"
                     >
-                      {/* Index */}
                       <span className="shrink-0 pt-0.5 font-serif text-sm italic text-primary/60 transition-colors group-hover:text-primary">
                         {channel.index}
                       </span>
 
-                      {/* Icon + content */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
                           <span
@@ -272,7 +269,6 @@ export default function ContactPage() {
                         </p>
                       </div>
 
-                      {/* Arrow */}
                       <RiArrowRightUpLine className="mt-1 size-4 shrink-0 text-neutral-400 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
                     </Link>
                   );
@@ -401,7 +397,6 @@ export default function ContactPage() {
                 then sends the nearest certified mechanic.
               </p>
 
-              {/* Feature list */}
               <ul className="mt-8 space-y-3 border-t border-neutral-900/10 pt-6">
                 {[
                   "Instant confirmation within 1 minute",
@@ -433,15 +428,14 @@ export default function ContactPage() {
                       <RiStarFill key={i} className="size-2.5 text-primary" />
                     ))}
                   </span>
-                  Ahmed A. · Dubai Marina
+                  Ahmed A. · {city}
                 </p>
               </div>
             </div>
 
-            {/* Right: The form as a "letter" */}
+            {/* Right: The form */}
             <div className="lg:col-span-7">
               <form className="space-y-8">
-                {/* Header of the "letter" */}
                 <div className="flex items-center justify-between border-b border-neutral-900/10 pb-4">
                   <div className="flex items-center gap-2.5">
                     <span className="flex size-8 items-center justify-center rounded-md bg-primary/10">
@@ -456,7 +450,6 @@ export default function ContactPage() {
                   </span>
                 </div>
 
-                {/* Row: Name + Phone */}
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <InkField
                     icon={RiUserFill}
@@ -475,7 +468,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Row: Email */}
                 <InkField
                   icon={RiMailFill}
                   label="Email"
@@ -484,7 +476,6 @@ export default function ContactPage() {
                   type="email"
                 />
 
-                {/* Row: Service */}
                 <div className="group relative border-b border-neutral-900/20 pb-2 transition-colors focus-within:border-primary">
                   <label
                     htmlFor="service"
@@ -519,7 +510,6 @@ export default function ContactPage() {
                   </select>
                 </div>
 
-                {/* Row: Message */}
                 <div className="group relative border-b border-neutral-900/20 pb-2 transition-colors focus-within:border-primary">
                   <label
                     htmlFor="message"
@@ -537,7 +527,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Submit row */}
                 <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">
                     Encrypted · No spam · No fees
@@ -552,7 +541,6 @@ export default function ContactPage() {
                   </button>
                 </div>
 
-                {/* Divider */}
                 <div className="flex items-center gap-3 py-2">
                   <span className="h-px flex-1 bg-neutral-900/10" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-500">
@@ -561,7 +549,6 @@ export default function ContactPage() {
                   <span className="h-px flex-1 bg-neutral-900/10" />
                 </div>
 
-                {/* Quick contact buttons */}
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <Link
                     href={numberCallLink}
@@ -612,7 +599,7 @@ export default function ContactPage() {
       </section>
 
       {/* ============================================================
-          CLOSING — Dark editorial band (matches About page)
+          CLOSING — Dark editorial band
       ============================================================ */}
       <section className="relative w-full bg-neutral-900 text-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -663,7 +650,7 @@ export default function ContactPage() {
                 <span className="hidden size-1 rounded-full bg-white/20 sm:inline-block" />
                 <span>500+ drivers</span>
                 <span className="hidden size-1 rounded-full bg-white/20 sm:inline-block" />
-                <span>16 districts</span>
+                <span>{serviceAreas.length} districts</span>
                 <span className="hidden size-1 rounded-full bg-white/20 sm:inline-block" />
                 <span className="text-primary">24/7 dispatch</span>
               </div>

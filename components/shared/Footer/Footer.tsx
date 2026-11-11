@@ -11,7 +11,7 @@ import {
   RiArrowUpLine,
   RiFlashlightFill,
 } from "@remixicon/react";
-import { SiteConfig, streetAddress } from "@/config/siteConfig";
+import { operatingHours, SiteConfig, streetAddress } from "@/config/siteConfig";
 import { services } from "@/data/services/services";
 import Logo from "../Logo/Logo";
 
@@ -83,6 +83,28 @@ export default function Footer() {
             <p className="mt-6 max-w-md text-[14px] leading-relaxed text-neutral-600">
               {SiteConfig.description}
             </p>
+                        {/* Contact directory */}
+              <div className="">
+                <ul className="mt-4 space-y-2.5">
+                  <ContactLine
+                    icon={RiPhoneFill}
+                    href={numberCallLink}
+                    value={displayNumber}
+                    highlight
+                  />
+                  <ContactLine
+                    icon={RiMailFill}
+                    href={`mailto:${email}`}
+                    value={email}
+                  />
+                  <ContactLine
+                    icon={RiMapPinFill}
+                    href={GMB.mapsLink}
+                    value={`${streetAddress}, ${location}, ${city}`}
+                    external
+                  />
+                </ul>
+              </div>
 
             {/* Business credentials row */}
             <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
@@ -145,7 +167,7 @@ export default function Footer() {
           </div>
 
           {/* ---------- COLUMN 2-4: Directory columns (7 cols) ---------- */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:col-span-7">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:col-span-8">
             {/* Services */}
             <div>
               <ColumnHeading title="Services" count={services.length} />
@@ -186,31 +208,46 @@ export default function Footer() {
                   />
                 ))}
               </ul>
-
-              {/* Contact directory */}
-              <div className="mt-8 border-t border-neutral-900/10 pt-5">
-                <ColumnHeading title="Direct" />
-                <ul className="mt-4 space-y-2.5">
-                  <ContactLine
-                    icon={RiPhoneFill}
-                    href={numberCallLink}
-                    value={displayNumber}
-                    highlight
-                  />
-                  <ContactLine
-                    icon={RiMailFill}
-                    href={`mailto:${email}`}
-                    value={email}
-                  />
-                  <ContactLine
-                    icon={RiMapPinFill}
-                    href={GMB.mapsLink}
-                    value={`${streetAddress}, ${location}, ${city}`}
-                    external
-                  />
+                                        {/* ============================================
+                  OPERATING HOURS (below Company links)
+              ============================================ */}
+              <div className="mt-8">
+                <ColumnHeading title="Hours" />
+                <ul className="mt-4 space-y-1.5">
+                  {operatingHours?.map((schedule, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center justify-between gap-2 py-0.5 text-[12px]"
+                    >
+                      <span className="font-medium text-neutral-600">
+                        {schedule.day}
+                      </span>
+                      <span className="flex items-center gap-1.5 font-serif text-[11px] font-semibold italic text-primary">
+                        <span className="size-1 rounded-full bg-primary/60" />
+                        {schedule.hours}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
+
+                {/* Always open badge */}
+                <div className="mt-4 flex items-center gap-2 rounded-lg border border-emerald-600/20 bg-emerald-50 px-2.5 py-1.5">
+                  <span className="relative flex size-1.5">
+                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-500/60" />
+                    <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">
+                    Open 24/7
+                  </span>
+                </div>
               </div>
+
+  
             </div>
+
+
+
+
           </div>
         </div>
       </div>
@@ -248,17 +285,6 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
-
-            {/* Right: back to top */}
-            <Link
-              href="#top"
-              className="group inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-500 transition-colors hover:text-neutral-900"
-            >
-              Back to top
-              <span className="flex size-7 items-center justify-center rounded-full border border-neutral-900/15 transition-all group-hover:-translate-y-0.5 group-hover:border-neutral-900/40">
-                <RiArrowUpLine className="size-3.5" />
-              </span>
-            </Link>
           </div>
         </div>
       </div>
@@ -355,3 +381,4 @@ function ContactLine({
     </li>
   );
 }
+

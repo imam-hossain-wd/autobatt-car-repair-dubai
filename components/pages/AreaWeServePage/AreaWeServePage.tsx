@@ -226,7 +226,7 @@ export default function ServiceAreasPage() {
               return (
                 <Link
                   key={area.slug}
-                  href={`/area-we-serve/${area.slug}`}
+                  href={`/service-area/${area.slug}`}
                   className="group relative flex items-start gap-4 border-b border-neutral-900/10 py-5 transition-colors hover:bg-neutral-50/60"
                 >
                   {/* Number */}

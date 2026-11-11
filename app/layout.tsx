@@ -5,6 +5,7 @@ import Footer from "@/components/shared/Footer/Footer";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import SchemaScript from "@/seo/SchemaScript/SchemaScript";
 import CTA from "@/components/shared/CTA/CTA";
+import FloatingButtons from "@/components/shared/FloatingButton/FloatingButton";
 
 const notoSerif = Noto_Serif({subsets:['latin'],variable:'--font-serif'});
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         <SchemaScript />
         <main>
           <Navbar />
+          <FloatingButtons />
         {children}
         <CTA />
         <Footer />
